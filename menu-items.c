@@ -166,10 +166,17 @@ void game_loop(SDL_Renderer* renderer, game_t* game, menu_t* menu){
                 menu->state = QUIT;
                 break;
 
+            case SDL_KEYDOWN:
+                switch (e.key.keysym.scancode){ 
+                case SDL_SCANCODE_ESCAPE:
+                    game->state = QUIT_STATE;
+                    break;
+                }
+
             case SDL_MOUSEBUTTONDOWN:
                 click_on_cell(game,
                               e.button.y / CELL_HEIGHT,
-                              e.button.x / CELL_WIDTH);
+                              e.button.x / CELL_WIDTH, menu);
                 break;
 
             default: {}

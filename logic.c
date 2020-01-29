@@ -143,10 +143,14 @@ void reset_game(game_t *game)
     }
 }
 
-void click_on_cell(game_t *game, int row, int column)
+void click_on_cell(game_t *game, int row, int column, menu_t* menu)
 {
     if (game->state == RUNNING_STATE) {
         player_turn(game, row, column);
+    } else if (game->state == QUIT_STATE) {
+        menu->state = RUNNING;
+        menu->type = INIT_MENU;
+        menu->selection = NO_SELECTION;      
     } else {
         reset_game(game);
     }
