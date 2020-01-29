@@ -52,7 +52,6 @@ game_t* game_init()
     for (int i = 0; i < N * N; ++i) {
         game->board[i] = EMPTY;
     }
-    game->board[5] = PLAYER_X;
     return game;
 }
 

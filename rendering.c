@@ -475,7 +475,4 @@ void render_confirm_input(SDL_Renderer* renderer, char* text, char* confirm, int
 
 void render_instructions(SDL_Renderer* renderer){
     render_screen(renderer,"resources/instructs.png");
-    render_20(renderer, 75, 130, "50           25      switch", DEFAULT_FONT);
-    render_20(renderer, 120, 310, "A             B             C             D", DEFAULT_FONT); 
-    render_20(renderer, 450, 260, "confirm", DEFAULT_FONT);    
 }
